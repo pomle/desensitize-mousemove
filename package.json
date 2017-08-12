@@ -2,7 +2,7 @@
   "name": "desensitize-mousemove",
   "description": "A wrapper for mousemove callback that allows to adjust hook-in sensitivity.",
   "license": "ISC",
-  "version": "0.0.1",
+  "version": "0.1.0",
   "scripts": {
     "autoformat": "prettier --trailing-comma es5 --write './src/**/*.{js,jsx}'",
     "build": "babel ./src/ --out-dir ./dist"
