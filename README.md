@@ -13,7 +13,8 @@ function onMouseMove(event) {
   console.log('Deliberate mousemove');
 }
 
-// Time in milliseconds how long mouse must be active before passing thru event.
+// Time in milliseconds for how long mouse must
+// be active before passing thru event.
 const COUNTDOWN = 200;
 
 // Time in milliseconds until measuring is reset.
