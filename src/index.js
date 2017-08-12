@@ -1,13 +1,18 @@
-function desensitizeMouseMove(callback, sluggishness = 5, timeout = 500) {
-  let next = 0;
-  let count = 0;
+function desensitizeMouseMove(callback, countdown = 500, timeout = 200) {
+  let acceptAt = 0;
+  let resetAt = 0;
+  let now;
+
   return function handleMouseMove(event) {
-    const now = Date.now();
-    if (next < now) {
-      count = 0;
-      next = now + timeout;
+    now = Date.now();
+
+    if (now > resetAt) {
+      acceptAt = now + countdown;
     }
-    if (++count > sluggishness) {
+
+    resetAt = now + timeout;
+
+    if (now > acceptAt) {
       callback(event);
     }
   };

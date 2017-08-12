@@ -1,6 +1,8 @@
 # Desensitize Mousemove
 
-A wrapper for mousemove event handlers that requires initial movement before passing thru event to handler. Useful for when mousemove should activate something but subtle mousemove should be ignored because they are assumed to be inadvertent.
+A wrapper for mousemove event handlers that requires initial movement before passing thru event to handler. Useful for when mousemove needs to be taken into account subtle mousemove must be ignored because they are assumed to be inadvertent.
+
+Once threshold has been met all events will be passed thru until no more events are passed
 
 ## Usage.
 
@@ -11,11 +13,14 @@ function onMouseMove(event) {
   console.log('Deliberate mousemove');
 }
 
-// Anti-sensitivity. The higher the number the more aggressive the mousemove needs to be.
-const SLUGGISHNESS = 20;
+// Time in milliseconds how long mouse must be active before passing thru event.
+const COUNTDOWN = 200;
+
+// Time in milliseconds until measuring is reset.
+const TIMEOUT = 500;
 
 document.body.addEventListener(
   'mousemove',
-  desensitize(onMouseMove, SLUGGISHNESS)
+  desensitize(onMouseMove, COUNTDOWN, TIMEOUT)
 );
 ```
