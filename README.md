@@ -15,10 +15,10 @@ function onMouseMove(event) {
 
 // Time in milliseconds for how long mouse must
 // be active before passing thru event.
-const COUNTDOWN = 200;
+var COUNTDOWN = 200;
 
 // Time in milliseconds until measuring is reset.
-const TIMEOUT = 500;
+var TIMEOUT = 500;
 
 document.body.addEventListener(
   'mousemove',
