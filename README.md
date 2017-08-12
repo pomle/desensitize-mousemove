@@ -1,8 +1,8 @@
 # Desensitize Mousemove
 
-A wrapper for mousemove event handlers that requires initial movement before passing thru event to handler. Useful for when mousemove needs to be taken into account subtle mousemove must be ignored because they are assumed to be inadvertent.
+A wrapper for mousemove event handlers that requires initial movement before passing thru event to handler. Useful for when mousemove needs to be taken into account while subtle mousemove must be ignored because they are assumed to be inadvertent.
 
-Once threshold has been met all events will be passed thru until no more events are passed
+Once threshold has been met all events will be passed thru. Passthru will stop when timeout reached and threshold must be met again.
 
 ## Usage.
 
